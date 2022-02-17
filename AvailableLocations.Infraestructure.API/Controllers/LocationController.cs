@@ -139,7 +139,7 @@ namespace AvailableLocations.Infraestructure.API.Controllers
         [HttpPost]
         public ActionResult<List<Location>> Post([FromBody] LocationDTO locationDTO)
         {
-            if (string.IsNullOrEmpty(locationDTO.locationOpenTime)) {
+            if (string.IsNullOrEmpty(locationDTO.locationOpenTime) || string.IsNullOrEmpty(locationDTO.locationCloseTime)) {
                 return StatusBadRequest();
             }
             try
@@ -148,15 +148,15 @@ namespace AvailableLocations.Infraestructure.API.Controllers
                 List<Location> result = service.SeleccionarByTimeRange(LocConverter.DtoToLocation(locationDTO));
                 if (result != null)
                 {
-                    LocationDTO LocationDto = new LocationDTO();
+                    LocationDTO foundedLocationDto = new LocationDTO();
                     List<LocationDTO> listLocationDto = new List<LocationDTO>();
                     foreach (Location Item in result)
                     {
-                        LocationDto.locationId = Item.locationId;
-                        LocationDto.locationName = Item.locationName;
-                        LocationDto.locationOpenTime = Item.locationOpenTime.ToString();
-                        LocationDto.locationCloseTime = Item.locationCloseTime.ToString();
-                        listLocationDto.Add(LocationDto);
+                        foundedLocationDto.locationId = Item.locationId;
+                        foundedLocationDto.locationName = Item.locationName;
+                        foundedLocationDto.locationOpenTime = Item.locationOpenTime.ToString();
+                        foundedLocationDto.locationCloseTime = Item.locationCloseTime.ToString();
+                        listLocationDto.Add(foundedLocationDto);
                     }
                     var json = JsonConvert.SerializeObject(listLocationDto);
                     return Ok(json);
@@ -172,6 +172,60 @@ namespace AvailableLocations.Infraestructure.API.Controllers
                 return StatusInternalServerError();
             }
             
+        }
+        // POST api/<ProductoController>/create
+        /// <summary>
+        /// Add Location.
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     POST /location
+        ///     {
+        ///         "name":"Nombre Localizacion",
+        ///         "locationOpenTime":"10:00",
+        ///         "locationCloseTime":"13:00"
+        ///     }
+        ///
+        /// </remarks>
+        /// <returns>A list of Locations that are available between the given OpenTime and CloseTime</returns>
+        /// <response code="200">Returns the created location</response>
+        /// <response code="400">If the user make a bad request</response>      
+        /// <response code="500">If exist any kind of error</response>         
+        [HttpPost]
+        [Route("create")]
+        public ActionResult<LocationDTO> PostCreate([FromBody] LocationDTO locationDTO)
+        {
+
+            if (string.IsNullOrEmpty(locationDTO.locationOpenTime) || string.IsNullOrEmpty(locationDTO.locationCloseTime) || string.IsNullOrEmpty(locationDTO.locationName))
+            {
+                return StatusBadRequest();
+            }
+
+
+            if (string.IsNullOrEmpty(locationDTO.locationOpenTime))
+            {
+                return StatusBadRequest();
+            }
+            try
+            {
+                var service = locationService();
+                Location result = service.Add(LocConverter.DtoToLocation(locationDTO));
+                LocationDTO newLocationDto = new LocationDTO();
+                newLocationDto.locationId = result.locationId;
+                newLocationDto.locationName = result.locationName;
+                newLocationDto.locationOpenTime = result.locationOpenTime.ToString();
+                newLocationDto.locationCloseTime = result.locationCloseTime.ToString();
+                var json = JsonConvert.SerializeObject(newLocationDto);
+                return Ok(json);
+            }
+            catch (Exception ex)
+            {
+
+                return StatusInternalServerError();
+            }
+
+
         }
 
         public ActionResult StatusNoContent()
