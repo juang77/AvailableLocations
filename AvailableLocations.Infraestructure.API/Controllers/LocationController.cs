@@ -1,0 +1,178 @@
+﻿using AvailableLocations.Domain;
+using AvailableLocations.Infraestructure.API.Converters;
+using AvailableLocations.Infraestructure.Data.Context;
+using AvailableLocations.Infraestructure.Data.Repositories;
+using AvailableLocations.Services.DTOs;
+using AvailableLocations.Services.Services;
+using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using Swashbuckle.AspNetCore.Annotations;
+using System;
+using System.Collections.Generic;
+
+
+namespace AvailableLocations.Infraestructure.API.Controllers
+{
+    [SwaggerTag("This API give user access to Locations")]
+    [Route("api/[controller]")]
+    [ApiController]
+    public class LocationController : Controller
+    {
+        LocationDTOConverter LocConverter = new LocationDTOConverter();
+
+        LocationService locationService(){
+            LocationContext db = new LocationContext();
+            LocationRepository repo = new LocationRepository(db);
+            LocationService service = new LocationService(repo);
+            return service;
+        }
+
+        // GET: api/<LocationController>
+        /// <summary>
+        /// Get Locations full list.
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        /// </remarks>
+        /// <returns>A full list of Locations</returns>
+        /// <response code="200">Returns the list of Locations</response>
+        /// <response code="204">If the item list null</response>      
+        /// <response code="500">If exist any kind of error</response>      
+        [HttpGet]
+        public ActionResult<List<LocationDTO>> Get()
+        {
+            try
+            {
+                var service = locationService();
+                List<Location> result = service.List();
+                if (result != null)
+                {
+                    LocationDTO LocationDto = new LocationDTO();
+                    List<LocationDTO> listLocationDto = new List<LocationDTO>();
+                    foreach (Location Item in result)
+                    {
+                        LocationDto.locationId = Item.locationId;
+                        LocationDto.locationName = Item.locationName;
+                        LocationDto.locationOpenTime = Item.locationOpenTime.ToString();
+                        LocationDto.locationCloseTime = Item.locationCloseTime.ToString();
+                        listLocationDto.Add(LocationDto);
+                    }
+                    var json = JsonConvert.SerializeObject(listLocationDto);
+                    return Ok(json);
+                }
+                else {
+                    return StatusCode(204, "No Content");
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Internal server error");
+            }
+            
+        }
+
+        // GET api/<ProductoController>/5
+        /// <summary>
+        /// Get one Location by Id.
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     GET /location/{id}
+        ///
+        /// </remarks>
+        /// <param name="id"></param>
+        /// <returns>A Locations identified by the input id</returns>
+        /// <response code="200">Returns the Location identified by the Id</response>
+        /// <response code="204">If the Id not exist in the DB</response>      
+        /// <response code="500">If exist any kind of error</response>           
+        [HttpGet("{id}")]
+        public ActionResult<Location> Get(Guid id)
+        {
+            try
+            {
+                var service = locationService();
+                Location result = service.SelectById(id);
+                if (result != null)
+                {
+                    LocationDTO LocationDto = new LocationDTO();
+                    LocationDto.locationId = result.locationId;
+                    LocationDto.locationName = result.locationName;
+                    LocationDto.locationOpenTime = result.locationOpenTime.ToString();
+                    LocationDto.locationCloseTime = result.locationCloseTime.ToString();
+                    var json = JsonConvert.SerializeObject(LocationDto);
+                    return Ok(json);
+                }
+                else {
+                    return StatusCode(204, "No Content");
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Internal server error");
+            }
+            
+        }
+
+        // POST api/<ProductoController>
+        /// <summary>
+        /// Get Locations by Time Range.
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     POST /location
+        ///     {
+        ///         "locationOpenTime":"10:00",
+        ///         "locationCloseTime":"13:00"
+        ///     }
+        ///
+        /// </remarks>
+        /// <returns>A list of Locations that are available between the given OpenTime and CloseTime</returns>
+        /// <response code="200">Returns the list of locations that are available in the range of time</response>
+        /// <response code="400">If the user make a bad request</response>      
+        /// <response code="204">If not exist any Location available in the input range</response>      
+        /// <response code="500">If exist any kind of error</response>         
+        [HttpPost]
+        public ActionResult<List<Location>> Post([FromBody] LocationDTO locationDTO)
+        {
+            if (string.IsNullOrEmpty(locationDTO.locationOpenTime)) {
+                return StatusCode(400, "Bad Request");
+            }
+            try
+            {
+                var service = locationService();
+                List<Location> result = service.SeleccionarByTimeRange(LocConverter.DtoToLocation(locationDTO));
+                if (result != null)
+                {
+                    LocationDTO LocationDto = new LocationDTO();
+                    List<LocationDTO> listLocationDto = new List<LocationDTO>();
+                    foreach (Location Item in result)
+                    {
+                        LocationDto.locationId = Item.locationId;
+                        LocationDto.locationName = Item.locationName;
+                        LocationDto.locationOpenTime = Item.locationOpenTime.ToString();
+                        LocationDto.locationCloseTime = Item.locationCloseTime.ToString();
+                        listLocationDto.Add(LocationDto);
+                    }
+                    var json = JsonConvert.SerializeObject(listLocationDto);
+                    return Ok(json);
+                }
+                else {
+                    return StatusCode(204, "No Content");
+                }
+                
+            }
+            catch (Exception ex)
+            {
+
+                return StatusCode(500, "Internal server error");
+            }
+            
+        }
+
+    }
+}

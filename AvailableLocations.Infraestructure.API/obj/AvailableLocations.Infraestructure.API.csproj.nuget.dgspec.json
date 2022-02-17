@@ -1,0 +1,295 @@
+{
+  "format": 1,
+  "restore": {
+    "E:\\C#Practice\\AvailableLocations\\AvailableLocations.Infraestructure.API\\AvailableLocations.Infraestructure.API.csproj": {}
+  },
+  "projects": {
+    "E:\\C#Practice\\AvailableLocations\\AvailableLocations.Domain\\AvailableLocations.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\C#Practice\\AvailableLocations\\AvailableLocations.Domain\\AvailableLocations.Domain.csproj",
+        "projectName": "AvailableLocations.Domain",
+        "projectPath": "E:\\C#Practice\\AvailableLocations\\AvailableLocations.Domain\\AvailableLocations.Domain.csproj",
+        "packagesPath": "C:\\Users\\juang\\.nuget\\packages\\",
+        "outputPath": "E:\\C#Practice\\AvailableLocations\\AvailableLocations.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\juang\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.405\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\C#Practice\\AvailableLocations\\AvailableLocations.Infraestructure.API\\AvailableLocations.Infraestructure.API.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\C#Practice\\AvailableLocations\\AvailableLocations.Infraestructure.API\\AvailableLocations.Infraestructure.API.csproj",
+        "projectName": "AvailableLocations.Infraestructure.API",
+        "projectPath": "E:\\C#Practice\\AvailableLocations\\AvailableLocations.Infraestructure.API\\AvailableLocations.Infraestructure.API.csproj",
+        "packagesPath": "C:\\Users\\juang\\.nuget\\packages\\",
+        "outputPath": "E:\\C#Practice\\AvailableLocations\\AvailableLocations.Infraestructure.API\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\juang\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "E:\\C#Practice\\AvailableLocations\\AvailableLocations.Domain\\AvailableLocations.Domain.csproj": {
+                "projectPath": "E:\\C#Practice\\AvailableLocations\\AvailableLocations.Domain\\AvailableLocations.Domain.csproj"
+              },
+              "E:\\C#Practice\\AvailableLocations\\AvailableLocations.Infraestructure.Data\\AvailableLocations.Infraestructure.Data.csproj": {
+                "projectPath": "E:\\C#Practice\\AvailableLocations\\AvailableLocations.Infraestructure.Data\\AvailableLocations.Infraestructure.Data.csproj"
+              },
+              "E:\\C#Practice\\AvailableLocations\\AvailableLocations.Services\\AvailableLocations.Services.csproj": {
+                "projectPath": "E:\\C#Practice\\AvailableLocations\\AvailableLocations.Services\\AvailableLocations.Services.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.2.3, )"
+            },
+            "Swashbuckle.AspNetCore.Annotations": {
+              "target": "Package",
+              "version": "[6.2.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.405\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\C#Practice\\AvailableLocations\\AvailableLocations.Infraestructure.Data\\AvailableLocations.Infraestructure.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\C#Practice\\AvailableLocations\\AvailableLocations.Infraestructure.Data\\AvailableLocations.Infraestructure.Data.csproj",
+        "projectName": "AvailableLocations.Infraestructure.Data",
+        "projectPath": "E:\\C#Practice\\AvailableLocations\\AvailableLocations.Infraestructure.Data\\AvailableLocations.Infraestructure.Data.csproj",
+        "packagesPath": "C:\\Users\\juang\\.nuget\\packages\\",
+        "outputPath": "E:\\C#Practice\\AvailableLocations\\AvailableLocations.Infraestructure.Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\juang\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "E:\\C#Practice\\AvailableLocations\\AvailableLocations.Domain\\AvailableLocations.Domain.csproj": {
+                "projectPath": "E:\\C#Practice\\AvailableLocations\\AvailableLocations.Domain\\AvailableLocations.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.14, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.14, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.405\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\C#Practice\\AvailableLocations\\AvailableLocations.Services\\AvailableLocations.Services.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\C#Practice\\AvailableLocations\\AvailableLocations.Services\\AvailableLocations.Services.csproj",
+        "projectName": "AvailableLocations.Services",
+        "projectPath": "E:\\C#Practice\\AvailableLocations\\AvailableLocations.Services\\AvailableLocations.Services.csproj",
+        "packagesPath": "C:\\Users\\juang\\.nuget\\packages\\",
+        "outputPath": "E:\\C#Practice\\AvailableLocations\\AvailableLocations.Services\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\juang\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "E:\\C#Practice\\AvailableLocations\\AvailableLocations.Domain\\AvailableLocations.Domain.csproj": {
+                "projectPath": "E:\\C#Practice\\AvailableLocations\\AvailableLocations.Domain\\AvailableLocations.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.405\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
