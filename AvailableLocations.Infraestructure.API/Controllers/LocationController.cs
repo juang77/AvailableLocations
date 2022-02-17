@@ -62,13 +62,13 @@ namespace AvailableLocations.Infraestructure.API.Controllers
                     return Ok(json);
                 }
                 else {
-                    return StatusNoContent();
+                    return StatusCode(204, "No Content");
                 }
                 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                return StatusInternalServerError();
+                return StatusCode(500, "Internal Server Error");
             }
             
         }
@@ -106,13 +106,13 @@ namespace AvailableLocations.Infraestructure.API.Controllers
                     return Ok(json);
                 }
                 else {
-                    return StatusNoContent();
+                    return StatusCode(204, "No Content");
                 }
                 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                return StatusInternalServerError();
+                return StatusCode(500, "Internal Server Error");
             }
             
         }
@@ -140,7 +140,7 @@ namespace AvailableLocations.Infraestructure.API.Controllers
         public ActionResult<List<Location>> Post([FromBody] LocationDTO locationDTO)
         {
             if (string.IsNullOrEmpty(locationDTO.locationOpenTime) || string.IsNullOrEmpty(locationDTO.locationCloseTime)) {
-                return StatusBadRequest();
+                return StatusCode(400, "Bad user Request");
             }
             try
             {
@@ -162,14 +162,14 @@ namespace AvailableLocations.Infraestructure.API.Controllers
                     return Ok(json);
                 }
                 else {
-                    return StatusNoContent();
+                    return StatusCode(204, "No Content");
                 }
                 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
-                return StatusInternalServerError();
+                return StatusCode(500, "Internal Server Error");
             }
             
         }
@@ -199,13 +199,13 @@ namespace AvailableLocations.Infraestructure.API.Controllers
 
             if (string.IsNullOrEmpty(locationDTO.locationOpenTime) || string.IsNullOrEmpty(locationDTO.locationCloseTime) || string.IsNullOrEmpty(locationDTO.locationName))
             {
-                return StatusBadRequest();
+                return StatusCode(400, "Bad user Request");
             }
 
 
             if (string.IsNullOrEmpty(locationDTO.locationOpenTime))
             {
-                return StatusBadRequest();
+                return StatusCode(400, "Bad user Request");
             }
             try
             {
@@ -219,29 +219,13 @@ namespace AvailableLocations.Infraestructure.API.Controllers
                 var json = JsonConvert.SerializeObject(newLocationDto);
                 return Ok(json);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
-                return StatusInternalServerError();
+                return StatusCode(500, "Internal Server Error");
             }
 
 
         }
-
-        public ActionResult StatusNoContent()
-        {
-            return StatusCode(204, "No Content");
-        }
-
-        public ActionResult StatusInternalServerError()
-        {
-            return StatusCode(500, "No Content");
-        }
-
-        public ActionResult StatusBadRequest()
-        {
-            return StatusCode(400, "No Content");
-        }
-
     }
 }
