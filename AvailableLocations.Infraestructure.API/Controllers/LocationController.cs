@@ -62,13 +62,13 @@ namespace AvailableLocations.Infraestructure.API.Controllers
                     return Ok(json);
                 }
                 else {
-                    return StatusCode(204, "No Content");
+                    return StatusNoContent();
                 }
                 
             }
             catch (Exception ex)
             {
-                return StatusCode(500, "Internal server error");
+                return StatusInternalServerError();
             }
             
         }
@@ -106,13 +106,13 @@ namespace AvailableLocations.Infraestructure.API.Controllers
                     return Ok(json);
                 }
                 else {
-                    return StatusCode(204, "No Content");
+                    return StatusNoContent();
                 }
                 
             }
             catch (Exception ex)
             {
-                return StatusCode(500, "Internal server error");
+                return StatusInternalServerError();
             }
             
         }
@@ -140,7 +140,7 @@ namespace AvailableLocations.Infraestructure.API.Controllers
         public ActionResult<List<Location>> Post([FromBody] LocationDTO locationDTO)
         {
             if (string.IsNullOrEmpty(locationDTO.locationOpenTime)) {
-                return StatusCode(400, "Bad Request");
+                return StatusBadRequest();
             }
             try
             {
@@ -162,16 +162,31 @@ namespace AvailableLocations.Infraestructure.API.Controllers
                     return Ok(json);
                 }
                 else {
-                    return StatusCode(204, "No Content");
+                    return StatusNoContent();
                 }
                 
             }
             catch (Exception ex)
             {
 
-                return StatusCode(500, "Internal server error");
+                return StatusInternalServerError();
             }
             
+        }
+
+        public ActionResult StatusNoContent()
+        {
+            return StatusCode(204, "No Content");
+        }
+
+        public ActionResult StatusInternalServerError()
+        {
+            return StatusCode(500, "No Content");
+        }
+
+        public ActionResult StatusBadRequest()
+        {
+            return StatusCode(400, "No Content");
         }
 
     }
