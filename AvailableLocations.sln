@@ -13,8 +13,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AvailableLocations.Infraest
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AvailableLocations.Api.Tests", "AvailableLocations.Api.Tests\AvailableLocations.Api.Tests.csproj", "{4971A095-0505-4FF7-9D69-B1993D2557D0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocationReactApp", "LocationReactApp\LocationReactApp.csproj", "{D601682B-3A54-47C0-856A-A66CA608D069}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,10 +39,6 @@ Global
 		{4971A095-0505-4FF7-9D69-B1993D2557D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4971A095-0505-4FF7-9D69-B1993D2557D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4971A095-0505-4FF7-9D69-B1993D2557D0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D601682B-3A54-47C0-856A-A66CA608D069}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D601682B-3A54-47C0-856A-A66CA608D069}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D601682B-3A54-47C0-856A-A66CA608D069}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D601682B-3A54-47C0-856A-A66CA608D069}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
