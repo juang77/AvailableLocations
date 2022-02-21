@@ -38,7 +38,12 @@ E:\C#Practice\AvailableLocations\AvailableLocations.Infraestructure.API\bin\Debu
 E:\C#Practice\AvailableLocations\AvailableLocations.Infraestructure.API\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
 E:\C#Practice\AvailableLocations\AvailableLocations.Infraestructure.API\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 E:\C#Practice\AvailableLocations\AvailableLocations.Infraestructure.API\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+E:\C#Practice\AvailableLocations\AvailableLocations.Infraestructure.API\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
 E:\C#Practice\AvailableLocations\AvailableLocations.Infraestructure.API\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+E:\C#Practice\AvailableLocations\AvailableLocations.Infraestructure.API\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Annotations.dll
+E:\C#Practice\AvailableLocations\AvailableLocations.Infraestructure.API\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+E:\C#Practice\AvailableLocations\AvailableLocations.Infraestructure.API\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+E:\C#Practice\AvailableLocations\AvailableLocations.Infraestructure.API\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
 E:\C#Practice\AvailableLocations\AvailableLocations.Infraestructure.API\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
 E:\C#Practice\AvailableLocations\AvailableLocations.Infraestructure.API\bin\Debug\netcoreapp3.1\System.ComponentModel.Annotations.dll
 E:\C#Practice\AvailableLocations\AvailableLocations.Infraestructure.API\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
@@ -69,6 +74,7 @@ E:\C#Practice\AvailableLocations\AvailableLocations.Infraestructure.API\obj\Debu
 E:\C#Practice\AvailableLocations\AvailableLocations.Infraestructure.API\obj\Debug\netcoreapp3.1\AvailableLocations.Infraestructure.API.AssemblyInfoInputs.cache
 E:\C#Practice\AvailableLocations\AvailableLocations.Infraestructure.API\obj\Debug\netcoreapp3.1\AvailableLocations.Infraestructure.API.AssemblyInfo.cs
 E:\C#Practice\AvailableLocations\AvailableLocations.Infraestructure.API\obj\Debug\netcoreapp3.1\AvailableLocations.Infraestructure.API.csproj.CoreCompileInputs.cache
+E:\C#Practice\AvailableLocations\AvailableLocations.Infraestructure.API\obj\Debug\netcoreapp3.1\AvailableLocations.Infraestructure.API.MvcApplicationPartsAssemblyInfo.cs
 E:\C#Practice\AvailableLocations\AvailableLocations.Infraestructure.API\obj\Debug\netcoreapp3.1\AvailableLocations.Infraestructure.API.MvcApplicationPartsAssemblyInfo.cache
 E:\C#Practice\AvailableLocations\AvailableLocations.Infraestructure.API\obj\Debug\netcoreapp3.1\staticwebassets\AvailableLocations.Infraestructure.API.StaticWebAssets.Manifest.cache
 E:\C#Practice\AvailableLocations\AvailableLocations.Infraestructure.API\obj\Debug\netcoreapp3.1\staticwebassets\AvailableLocations.Infraestructure.API.StaticWebAssets.xml
@@ -78,9 +84,3 @@ E:\C#Practice\AvailableLocations\AvailableLocations.Infraestructure.API\obj\Debu
 E:\C#Practice\AvailableLocations\AvailableLocations.Infraestructure.API\obj\Debug\netcoreapp3.1\AvailableLocations.Infraestructure.API.dll
 E:\C#Practice\AvailableLocations\AvailableLocations.Infraestructure.API\obj\Debug\netcoreapp3.1\AvailableLocations.Infraestructure.API.pdb
 E:\C#Practice\AvailableLocations\AvailableLocations.Infraestructure.API\obj\Debug\netcoreapp3.1\AvailableLocations.Infraestructure.API.genruntimeconfig.cache
-E:\C#Practice\AvailableLocations\AvailableLocations.Infraestructure.API\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
-E:\C#Practice\AvailableLocations\AvailableLocations.Infraestructure.API\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
-E:\C#Practice\AvailableLocations\AvailableLocations.Infraestructure.API\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
-E:\C#Practice\AvailableLocations\AvailableLocations.Infraestructure.API\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
-E:\C#Practice\AvailableLocations\AvailableLocations.Infraestructure.API\obj\Debug\netcoreapp3.1\AvailableLocations.Infraestructure.API.MvcApplicationPartsAssemblyInfo.cs
-E:\C#Practice\AvailableLocations\AvailableLocations.Infraestructure.API\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Annotations.dll

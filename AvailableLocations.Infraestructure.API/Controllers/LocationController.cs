@@ -4,6 +4,7 @@ using AvailableLocations.Infraestructure.Data.Context;
 using AvailableLocations.Infraestructure.Data.Repositories;
 using AvailableLocations.Services.DTOs;
 using AvailableLocations.Services.Services;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using Swashbuckle.AspNetCore.Annotations;
@@ -16,6 +17,7 @@ namespace AvailableLocations.Infraestructure.API.Controllers
     [SwaggerTag("This API give user access to Locations")]
     [Route("api/[controller]")]
     [ApiController]
+    [EnableCors("AllowOrigin")]
     public class LocationController : Controller
     {
         LocationDTOConverter LocConverter = new LocationDTOConverter();
@@ -39,6 +41,7 @@ namespace AvailableLocations.Infraestructure.API.Controllers
         /// <response code="200">Returns the list of Locations</response>
         /// <response code="204">If the item list null</response>      
         /// <response code="500">If exist any kind of error</response>      
+        [EnableCors("AllowOrigin")]  
         [HttpGet]
         public ActionResult<List<LocationDTO>> Get()
         {
@@ -48,10 +51,11 @@ namespace AvailableLocations.Infraestructure.API.Controllers
                 List<Location> result = service.List();
                 if (result != null)
                 {
-                    LocationDTO LocationDto = new LocationDTO();
+                    
                     List<LocationDTO> listLocationDto = new List<LocationDTO>();
                     foreach (Location Item in result)
                     {
+                        LocationDTO LocationDto = new LocationDTO();
                         LocationDto.locationId = Item.locationId;
                         LocationDto.locationName = Item.locationName;
                         LocationDto.locationOpenTime = Item.locationOpenTime.ToString();
@@ -87,7 +91,8 @@ namespace AvailableLocations.Infraestructure.API.Controllers
         /// <returns>A Locations identified by the input id</returns>
         /// <response code="200">Returns the Location identified by the Id</response>
         /// <response code="204">If the Id not exist in the DB</response>      
-        /// <response code="500">If exist any kind of error</response>           
+        /// <response code="500">If exist any kind of error</response>      
+        [EnableCors("AllowOrigin")]  
         [HttpGet("{id}")]
         public ActionResult<Location> Get(Guid id)
         {
@@ -136,6 +141,7 @@ namespace AvailableLocations.Infraestructure.API.Controllers
         /// <response code="400">If the user make a bad request</response>      
         /// <response code="204">If not exist any Location available in the input range</response>      
         /// <response code="500">If exist any kind of error</response>         
+        [EnableCors("AllowOrigin")]  
         [HttpPost]
         public ActionResult<List<Location>> Post([FromBody] LocationDTO locationDTO)
         {
@@ -148,10 +154,11 @@ namespace AvailableLocations.Infraestructure.API.Controllers
                 List<Location> result = service.SeleccionarByTimeRange(LocConverter.DtoToLocation(locationDTO));
                 if (result != null)
                 {
-                    LocationDTO foundedLocationDto = new LocationDTO();
+                    
                     List<LocationDTO> listLocationDto = new List<LocationDTO>();
                     foreach (Location Item in result)
                     {
+                        LocationDTO foundedLocationDto = new LocationDTO();
                         foundedLocationDto.locationId = Item.locationId;
                         foundedLocationDto.locationName = Item.locationName;
                         foundedLocationDto.locationOpenTime = Item.locationOpenTime.ToString();
@@ -192,6 +199,7 @@ namespace AvailableLocations.Infraestructure.API.Controllers
         /// <response code="200">Returns the created location</response>
         /// <response code="400">If the user make a bad request</response>      
         /// <response code="500">If exist any kind of error</response>         
+        [EnableCors("AllowOrigin")]
         [HttpPost]
         [Route("create")]
         public ActionResult<LocationDTO> PostCreate([FromBody] LocationDTO locationDTO)

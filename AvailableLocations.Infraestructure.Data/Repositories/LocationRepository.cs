@@ -36,7 +36,7 @@ namespace AvailableLocations.Infraestructure.Data.Repositories
         /// <returns>A full Location list or an empty list if the Table is empty</returns>
         public List<Location> List()
         {
-            return db.Locations.ToList();
+            return db.Locations.OrderBy(c=>c.locationName).ToList();
         }
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace AvailableLocations.Infraestructure.Data.Repositories
         /// <returns>A Location list that accomplish with the filter or an empty list if not exist any one that pass the filter</returns>
         public List<Location> SeleccionarByTimeRange(Location entity)
         {
-            var selectedLocations = db.Locations.Where(c => c.locationOpenTime <= entity.locationOpenTime && c.locationCloseTime >= entity.locationCloseTime).ToList();
+            var selectedLocations = db.Locations.Where(c => c.locationOpenTime <= entity.locationOpenTime && c.locationCloseTime >= entity.locationCloseTime).OrderBy(c => c.locationName).ToList();
             return selectedLocations;
         }
 

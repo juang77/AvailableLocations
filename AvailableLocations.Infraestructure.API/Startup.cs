@@ -20,8 +20,19 @@ namespace AvailableLocations.Infraestructure.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(options =>
+            {
+                options.AddPolicy("myPolicy", builder =>
+                {
+                    builder.WithOrigins("http://localhost:3000")
+                            .AllowAnyHeader()
+                            .AllowAnyMethod()
+                            .AllowCredentials();
+                });
+            });
             services.AddControllers();
             AddSwagger(services);
+            
         }
 
         private void AddSwagger(IServiceCollection services)
@@ -62,6 +73,13 @@ namespace AvailableLocations.Infraestructure.API
             });
 
             app.UseRouting();
+
+            app.UseCors(x => x
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .SetIsOriginAllowed(origin => true) // allow any origin
+                .AllowCredentials()); // allow credentials
+
 
             app.UseAuthorization();
 
