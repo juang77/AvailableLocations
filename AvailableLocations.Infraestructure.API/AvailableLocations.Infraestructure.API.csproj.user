@@ -4,5 +4,6 @@
     <Controller_SelectedScaffolderID>MvcControllerWithActionsScaffolder</Controller_SelectedScaffolderID>
     <Controller_SelectedScaffolderCategoryPath>root/Common/MVC/Controller</Controller_SelectedScaffolderCategoryPath>
     <ShowAllFiles>true</ShowAllFiles>
+    <NameOfLastUsedPublishProfile>E:\C#Practice\AvailableLocations\AvailableLocations.Infraestructure.API\Properties\PublishProfiles\LocationsViewApi - Web Deploy.pubxml</NameOfLastUsedPublishProfile>
   </PropertyGroup>
 </Project>

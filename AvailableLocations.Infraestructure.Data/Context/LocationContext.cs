@@ -13,7 +13,7 @@ namespace AvailableLocations.Infraestructure.Data.Context
         /// </summary>
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
-            options.UseSqlServer(@"Data Source=localhost;Initial Catalog=LocationsDB;Integrated Security = true;");
+            options.UseSqlServer(@"Data Source=tcp:availablelocationsinfraestructureapidbserver.database.windows.net,1433;Initial Catalog=AvailableLocations.Infraestructure.API_db;User Id=juang77@availablelocationsinfraestructureapidbserver;Password=Nicolas8032367");
         }
 
         /// <summary>
