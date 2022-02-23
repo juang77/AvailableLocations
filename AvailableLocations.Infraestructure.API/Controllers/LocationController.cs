@@ -20,7 +20,13 @@ namespace AvailableLocations.Infraestructure.API.Controllers
     [EnableCors("AllowOrigin")]
     public class LocationController : Controller
     {
-        LocationDTOConverter LocConverter = new LocationDTOConverter();
+        //LocationDTOConverter LocConverter = new LocationDTOConverter();
+
+        ILocationDTOConverter _locationDTOConverter;
+
+        public LocationController(ILocationDTOConverter locationDTOConverter) {
+            _locationDTOConverter = locationDTOConverter;
+        }
 
         LocationService locationService(){
             LocationContext db = new LocationContext();
@@ -28,6 +34,7 @@ namespace AvailableLocations.Infraestructure.API.Controllers
             LocationService service = new LocationService(repo);
             return service;
         }
+
 
         // GET: api/<LocationController>
         /// <summary>
@@ -151,7 +158,7 @@ namespace AvailableLocations.Infraestructure.API.Controllers
             try
             {
                 var service = locationService();
-                List<Location> result = service.SeleccionarByTimeRange(LocConverter.DtoToLocation(locationDTO));
+                List<Location> result = service.SeleccionarByTimeRange(_locationDTOConverter.DtoToLocation(locationDTO));
                 if (result != null)
                 {
                     
@@ -218,7 +225,7 @@ namespace AvailableLocations.Infraestructure.API.Controllers
             try
             {
                 var service = locationService();
-                Location result = service.Add(LocConverter.DtoToLocation(locationDTO));
+                Location result = service.Add(_locationDTOConverter.DtoToLocation(locationDTO));
                 LocationDTO newLocationDto = new LocationDTO();
                 newLocationDto.locationId = result.locationId;
                 newLocationDto.locationName = result.locationName;

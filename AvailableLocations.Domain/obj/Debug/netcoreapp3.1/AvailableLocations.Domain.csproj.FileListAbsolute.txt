@@ -5,7 +5,6 @@ E:\C#Practice\AvailableLocations\AvailableLocations.Domain\bin\Debug\netcoreapp3
 E:\C#Practice\AvailableLocations\AvailableLocations.Domain\bin\Debug\netcoreapp3.1\AvailableLocations.Domain.dll
 E:\C#Practice\AvailableLocations\AvailableLocations.Domain\bin\Debug\netcoreapp3.1\AvailableLocations.Domain.pdb
 E:\C#Practice\AvailableLocations\AvailableLocations.Domain\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
-E:\C#Practice\AvailableLocations\AvailableLocations.Domain\obj\Debug\netcoreapp3.1\AvailableLocations.Domain.csproj.AssemblyReference.cache
 E:\C#Practice\AvailableLocations\AvailableLocations.Domain\obj\Debug\netcoreapp3.1\AvailableLocations.Domain.GeneratedMSBuildEditorConfig.editorconfig
 E:\C#Practice\AvailableLocations\AvailableLocations.Domain\obj\Debug\netcoreapp3.1\AvailableLocations.Domain.AssemblyInfoInputs.cache
 E:\C#Practice\AvailableLocations\AvailableLocations.Domain\obj\Debug\netcoreapp3.1\AvailableLocations.Domain.AssemblyInfo.cs

@@ -4,7 +4,7 @@ using System;
 
 namespace AvailableLocations.Infraestructure.API.Converters
 {
-    public class LocationDTOConverter
+    public class LocationDTOConverter : ILocationDTOConverter
     {
         // This is a Method for convert from main entity to a DTO with String in replace of TimeSpam
         public LocationDTO locationToDto(Location entity)

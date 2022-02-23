@@ -1,6 +1,7 @@
 ﻿using AvailableLocations.Domain;
 using AvailableLocations.Domain.Interfaces.Repositories;
 using AvailableLocations.Infraestructure.API.Controllers;
+using AvailableLocations.Infraestructure.API.Converters;
 using AvailableLocations.Services.DTOs;
 using AvailableLocations.Services.Interfaces;
 using AvailableLocations.Services.Services;
@@ -17,11 +18,12 @@ namespace AvailableLocations.Api.Tests
         private readonly LocationController _controller;
         private readonly IBaseService<Location, Guid> _service;
         private readonly IBaseRepository<Location, Guid> _repo;
+        private readonly ILocationDTOConverter _LocationDtoConverter;
 
         public LocationControllerTest()
         {
             _service = new LocationService(_repo);
-            _controller = new LocationController();
+            _controller = new LocationController(_LocationDtoConverter);
         }
 
         /// <summary>

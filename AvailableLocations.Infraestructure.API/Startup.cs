@@ -1,3 +1,4 @@
+using AvailableLocations.Infraestructure.API.Converters;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -23,7 +24,7 @@ namespace AvailableLocations.Infraestructure.API
             services.AddCors();
             services.AddControllers();
             AddSwagger(services);
-            
+            services.Add(new ServiceDescriptor(typeof(ILocationDTOConverter), new LocationDTOConverter()));
         }
 
         private void AddSwagger(IServiceCollection services)
